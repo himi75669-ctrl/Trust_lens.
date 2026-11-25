@@ -1,0 +1,22 @@
+{
+  "name": "trustlens",
+  "version": "1.0.0",
+  "description": "TrustLens — Multi-Vector Scam & Phishing Verification Platform",
+  "scripts": {
+    "start": "cd backend && node server.js",
+    "dev:backend": "cd backend && node --watch server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "test": "cd backend && node tests/engine.test.js"
+  },
+  "keywords": [
+    "scam-detection",
+    "anti-phishing",
+    "upi-fraud-prevention",
+    "digital-arrest-detection",
+    "qr-code-safety",
+    "deepfake-audio-defense"
+  ],
+  "author": "TrustLens Open Security Initiative",
+  "license": "MIT"
+}

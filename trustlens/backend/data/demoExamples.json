@@ -1,0 +1,236 @@
+{
+  "categories": [
+    {
+      "id": "url",
+      "title": "Phishing & Malicious Links",
+      "shortDescription": "Check suspicious website links, shortened URLs, and typo-squatting domains before clicking.",
+      "samples": [
+        {
+          "label": "Fake SBI KYC Phishing (Scam)",
+          "type": "scam",
+          "input": "https://sbi-kyc-verification-update.top/login.php?user=secure",
+          "description": "Uses fake domain with .top TLD posing as State Bank of India KYC update."
+        },
+        {
+          "label": "Fake Paytm Cashback Link (Scam)",
+          "type": "scam",
+          "input": "http://paytm-reward-cashback99.xyz/win-scratch-card",
+          "description": "Unencrypted HTTP address on .xyz domain promising cashback."
+        },
+        {
+          "label": "Official State Bank of India (Safe)",
+          "type": "safe",
+          "input": "https://www.onlinesbi.sbi",
+          "description": "Legitimate banking portal on registered .sbi domain with HTTPS."
+        }
+      ]
+    },
+    {
+      "id": "app",
+      "title": "Fake & Sideload Apps",
+      "shortDescription": "Audit third-party APKs, fake updates, and dangerous accessibility permissions.",
+      "samples": [
+        {
+          "label": "WhatsApp Pink Trojan (Scam)",
+          "type": "scam",
+          "input": {
+            "appName": "WhatsApp Pink Edition",
+            "packageName": "org.whatsapp.pink",
+            "source": "Forwarded APK via Telegram group",
+            "permissions": ["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.permission.READ_SMS", "android.permission.SYSTEM_ALERT_WINDOW"],
+            "description": "Offers new pink theme but requests complete accessibility service and background SMS interception."
+          }
+        },
+        {
+          "label": "Predatory 7-Day Loan App (Scam)",
+          "type": "scam",
+          "input": {
+            "appName": "Instant 5-Minute Cash Loan",
+            "packageName": "com.loan.fastrupee.quickcash",
+            "source": "Direct APK download from social media ad",
+            "permissions": ["android.permission.READ_CONTACTS", "android.permission.RECORD_AUDIO", "android.permission.READ_SMS"],
+            "description": "Asks for contacts and microphone access to threaten relatives if repayment is delayed."
+          }
+        },
+        {
+          "label": "Official Google Pay App (Safe)",
+          "type": "safe",
+          "input": {
+            "appName": "Google Pay: Secure UPI",
+            "packageName": "com.google.android.apps.nbu.paisa.user",
+            "source": "Official Google Play Store",
+            "permissions": ["android.permission.CAMERA"],
+            "description": "Installed through Google Play Store with Play Protect verification."
+          }
+        }
+      ]
+    },
+    {
+      "id": "qr",
+      "title": "Malicious QR Codes",
+      "shortDescription": "Decode QR destinations safely without triggering browser redirects or payment apps.",
+      "samples": [
+        {
+          "label": "Deceptive Reverse UPI QR (Scam)",
+          "type": "scam",
+          "input": "upi://pay?pa=refund-helpdesk@okhdfcbank&pn=Paytm+Refund+Desk&am=4999&cu=INR",
+          "description": "Buyer on OLX claims this QR will deposit money, but scanning it actually initiates a ₹4,999 payment."
+        },
+        {
+          "label": "Rogue Wi-Fi Hotspot QR (Scam)",
+          "type": "scam",
+          "input": "WIFI:S:Free_Airport_SuperFast_WiFi;T:WPA;P:password123;;",
+          "description": "Rogue network intended to sniff unencrypted communication in public places."
+        },
+        {
+          "label": "Legitimate Informational QR (Safe)",
+          "type": "safe",
+          "input": "https://trustlens.dev/security-guide",
+          "description": "Standard documentation link on official verified domain."
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "title": "AI Voice Clones & Extortion",
+      "shortDescription": "Detect emergency blackmail, fake kidnapping, and robotic synthesized speech.",
+      "samples": [
+        {
+          "label": "Fake Police Bail Extortion (Scam)",
+          "type": "scam",
+          "input": {
+            "consentGranted": true,
+            "description": "Mom, please don't tell dad! I had a severe car accident near the highway and the police are threatening to lock me up unless we transfer ₹35,000 for bail right now. Send it immediately to this lawyer's account!",
+            "acousticAnomalies": {
+              "unnaturalCadence": true,
+              "flatTone": true,
+              "lackOfBreathing": true,
+              "audioGlitch": true,
+              "backgroundMismatch": true
+            }
+          }
+        },
+        {
+          "label": "Routine Family Voice Note (Safe)",
+          "type": "safe",
+          "input": {
+            "consentGranted": true,
+            "description": "Hi mom, just letting you know I left work and will be home in 20 minutes. Do we need milk or vegetables from the market?",
+            "acousticAnomalies": {
+              "unnaturalCadence": false,
+              "flatTone": false,
+              "lackOfBreathing": false,
+              "audioGlitch": false,
+              "backgroundMismatch": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "payment",
+      "title": "Fake UPI & Payment Requests",
+      "shortDescription": "Inspect UPI VPA handles, collect requests, and the golden rule of incoming payments.",
+      "samples": [
+        {
+          "label": "Collect Request to 'Receive' Refund (Scam)",
+          "type": "scam",
+          "input": {
+            "vpa": "paytm-refund-team@ybl",
+            "amount": "3500",
+            "remark": "Paytm Cashback Refund - Enter PIN to claim",
+            "context": "Customer care on Google told me they are refunding my failed transaction and asked me to accept this collect request and enter my UPI PIN."
+          }
+        },
+        {
+          "label": "OLX Buyer Army Officer Trick (Scam)",
+          "type": "scam",
+          "input": {
+            "vpa": "army-canteen-purchase@okaxis",
+            "amount": "12000",
+            "remark": "Army advance deposit",
+            "context": "Buyer on OLX claiming to be posted in the Army cantonment says he sent money and asks me to scan QR and approve PIN to credit balance."
+          }
+        },
+        {
+          "label": "Verified Swiggy Food Order (Safe)",
+          "type": "safe",
+          "input": {
+            "vpa": "swiggy@icici",
+            "amount": "450",
+            "remark": "Swiggy Order #98321",
+            "context": "Direct checkout inside Swiggy app for food delivery."
+          }
+        }
+      ]
+    },
+    {
+      "id": "call",
+      "title": "Impersonation & Scam Calls",
+      "shortDescription": "Identify 'Digital Arrest' intimidation, fake CBI officers, and customs parcel coercion.",
+      "samples": [
+        {
+          "label": "CBI / Customs Digital Arrest Call (Scam)",
+          "type": "scam",
+          "input": {
+            "callerNumber": "+92-300-1234567",
+            "claimedCaller": "Inspector Vijay from CBI Cyber Cell Mumbai",
+            "conversationSummary": "A courier parcel sent from Mumbai Airport to Cambodia in your name contained 5 fake passports and 140g of illegal drugs. You are placed under Digital Arrest. You must stay on Skype video call in a locked room and transfer all your bank balance to the RBI verification safety escrow account immediately to clear your name."
+          }
+        },
+        {
+          "label": "Electricity Board Power Cut Call (Scam)",
+          "type": "scam",
+          "input": {
+            "callerNumber": "+91-98765-43210",
+            "claimedCaller": "State Electricity Department Billing Officer",
+            "conversationSummary": "Your electricity power bill was not updated last month. Power supply will be disconnected at 9:30 PM tonight unless you immediately transfer ₹200 verification fee to this WhatsApp number."
+          }
+        },
+        {
+          "label": "Hospital Appointment Reminder (Safe)",
+          "type": "safe",
+          "input": {
+            "callerNumber": "044-28290200",
+            "claimedCaller": "Apollo Hospitals Patient Helpdesk",
+            "conversationSummary": "Calling to confirm your general health checkup appointment tomorrow at 10:00 AM with Dr. Ramesh. Please reply 1 to confirm or 2 to reschedule."
+          }
+        }
+      ]
+    },
+    {
+      "id": "message",
+      "title": "Scam SMS & Chat Messages",
+      "shortDescription": "Analyze WhatsApp messages, fake KYC SMS, and high-urgency lottery texts.",
+      "samples": [
+        {
+          "label": "SBI Yono KYC Suspension SMS (Scam)",
+          "type": "scam",
+          "input": {
+            "sender": "+91-98123-45678",
+            "text": "Dear SBI customer, your YONO Netbanking account has been suspended today due to pending PAN KYC. Update immediately at http://sbi-pan-kyc.xyz/update or your account will be permanently blocked within 2 hours.",
+            "hour": 2
+          }
+        },
+        {
+          "label": "YouTube Video Liking Job Offer (Scam)",
+          "type": "scam",
+          "input": {
+            "sender": "+1-202-555-0199",
+            "text": "Hello! We offer flexible part-time work from home. Earn ₹3,000 to ₹8,000 daily by simply liking 3 YouTube videos and rating hotels on Google Maps. Daily payout via UPI. Contact Telegram @HR_Recruiter_Official",
+            "hour": 1
+          }
+        },
+        {
+          "label": "Official Bank Salary Credit SMS (Safe)",
+          "type": "safe",
+          "input": {
+            "sender": "VK-HDFCBK",
+            "text": "Your A/C ending in 4591 is credited with INR 52,000.00 on 24-Nov-2026 by NEFT-SALARY. Available Balance: INR 68,420.00. - HDFC Bank",
+            "hour": 17
+          }
+        }
+      ]
+    }
+  ]
+}

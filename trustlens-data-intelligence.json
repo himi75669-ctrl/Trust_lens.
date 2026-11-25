@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "generatedAt": "2026-11-24T13:27:45.137Z",
+    "sourceFiles": [
+      "paytm_ir - Sheet2.csv",
+      "Whatsapp_chat.csv",
+      "amazon.csv",
+      "Fake.csv",
+      "True.csv"
+    ],
+    "status": "active",
+    "totalAnalyzedDataPoints": "50,000+ entries from research corpora"
+  },
+  "paymentIntelligence": {
+    "legitimateMerchantPrefixes": [
+      "paytmqr",
+      "bharatpe",
+      "razorpay",
+      "phonepe",
+      "gpay",
+      "hdfcbank",
+      "icici",
+      "sbi",
+      "axisbank",
+      "airtel"
+    ],
+    "suspiciousVpaPatterns": [
+      "refund",
+      "support",
+      "helpdesk",
+      "cashback",
+      "reward",
+      "care",
+      "verification",
+      "tollfree",
+      "helpline",
+      "claim"
+    ],
+    "datasetBenchmark": {
+      "paytmRecordedQuarterlyGMVAvg": "31.91 Lakh Cr",
+      "paytmMonthlyActiveUserScale": "18.63 Million",
+      "totalPaytmQuartersTracked": 15
+    },
+    "goldenRule": "You NEVER enter a UPI PIN or password to RECEIVE money. Entering a PIN always DEBITS your account."
+  },
+  "messageAndVoiceIntelligence": {
+    "highUrgencyTokens": [
+      "urgent",
+      "immediately",
+      "blocked",
+      "arrest",
+      "police",
+      "customs",
+      "seized",
+      "lottery",
+      "winner",
+      "reward",
+      "refund",
+      "kyc",
+      "suspend",
+      "verify",
+      "unauthorized",
+      "cancel",
+      "compromised",
+      "expire",
+      "fine",
+      "penalty",
+      "court",
+      "summons",
+      "cbi",
+      "fbi",
+      "narcotics",
+      "parcel",
+      "electricity",
+      "disconnect",
+      "power",
+      "gift",
+      "cashback",
+      "crypto",
+      "investment",
+      "double",
+      "guaranteed",
+      "workfromhome",
+      "task",
+      "telegram",
+      "apk",
+      "sideload",
+      "pin",
+      "otp",
+      "passcode",
+      "biometric"
+    ],
+    "manipulationMarkers": [
+      "trump",
+      "about",
+      "news",
+      "president",
+      "donald",
+      "people",
+      "just",
+      "said",
+      "will",
+      "would",
+      "twitter",
+      "white",
+      "when",
+      "there",
+      "house",
+      "like",
+      "more",
+      "image",
+      "even",
+      "because",
+      "featured",
+      "after",
+      "obama",
+      "which",
+      "time",
+      "images",
+      "getty",
+      "realdonaldtrump",
+      "than",
+      "only",
+      "over",
+      "them",
+      "also",
+      "russia",
+      "right"
+    ],
+    "whatsappHourDistributionSample": {
+      "0": 477,
+      "1": 1031,
+      "2": 1111,
+      "3": 563,
+      "4": 31,
+      "5": 30,
+      "6": 15,
+      "7": 8,
+      "8": 37,
+      "9": 26,
+      "10": 95,
+      "11": 263,
+      "12": 278,
+      "13": 563,
+      "14": 216,
+      "15": 444,
+      "16": 395,
+      "17": 201,
+      "18": 476,
+      "19": 616,
+      "20": 345,
+      "21": 314,
+      "22": 227,
+      "23": 237
+    },
+    "highRiskOffPeakHours": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "psychologicalTriggers": [
+      {
+        "trigger": "Fear & Artificial Panic",
+        "description": "Fabricates impending disaster (arrest, account freeze, power shutoff) to force compliance without rational verification.",
+        "examples": [
+          "Electricity bill unpaid; power will be disconnected at 9:30 PM tonight.",
+          "Your Aadhaar is linked to illegal narcotics courier in Mumbai customs. Digital arrest begins now."
+        ]
+      },
+      {
+        "trigger": "Unearned Reward / Greed",
+        "description": "Offers high prizes, lotteries, or easy cash tasks to entice victims into paying processing fees or scanning QR codes.",
+        "examples": [
+          "Congratulations! You won ₹25,00,000 in KBC Jio Lucky Draw. Pay ₹4,999 registration fee.",
+          "Earn ₹3,000 to ₹8,000 daily by liking YouTube videos and rating Google hotels."
+        ]
+      },
+      {
+        "trigger": "Authority & Law Enforcement Impersonation",
+        "description": "Presents fake badges, official uniforms, or police letterheads to intimidate targets into silence.",
+        "examples": [
+          "This is Inspector Vijay Kumar from Crime Branch Cyber Police headquarters.",
+          "Department of Telecommunications: Your mobile number will be deactivated in 2 hours for illegal SMS spamming."
+        ]
+      },
+      {
+        "trigger": "Family Emergency / AI Voice Clone",
+        "description": "Clones voice from social media videos to stage mock kidnapping, car accidents, or urgent hospital bailouts.",
+        "examples": [
+          "Mom, I am in big trouble at the police station, please don’t tell dad, transfer money right now to this lawyer."
+        ]
+      }
+    ]
+  },
+  "ecommerceIntelligence": {
+    "topBrandsTracked": [
+      "Apple",
+      "Samsung",
+      "boAt",
+      "Portronics",
+      "Ambrane",
+      "OnePlus",
+      "Sony",
+      "Redmi",
+      "Noise",
+      "Realme",
+      "Wayona",
+      "Sounce",
+      "pTron",
+      "TPLink",
+      "AmazonBasics",
+      "ElectronicsHomeTheaterTVVideoTelevisionsSmartTelevisions",
+      "Duracell",
+      "tizum",
+      "ElectronicsHomeTheaterTVVideoAccessoriesCablesHDMICables",
+      "Zoul",
+      "Amazonbasics",
+      "FLiX",
+      "Wecool",
+      "Amazon",
+      "ElectronicsHomeTheaterTVVideoAccessoriesRemoteControls",
+      "ElectronicsHomeTheaterTVVideoTelevisionsStandardTelevisions",
+      "TPLINK",
+      "Airtel",
+      "ModelP",
+      "oraimo"
+    ],
+    "fakeDealThreshold": 85,
+    "suspiciousDomainsIndicators": [
+      "deal",
+      "free",
+      "discount",
+      "cheap",
+      "offer",
+      "win",
+      "claim",
+      "secure-login",
+      "verify-account"
+    ]
+  }
+}
